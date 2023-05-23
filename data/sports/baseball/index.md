@@ -1,6 +1,5 @@
 ---
 layout: home 
 breadcrumbs: AppBlocks.NET - Sports - Baseball
-title: Baseball
----
+tags: data sports
 # Baseball
