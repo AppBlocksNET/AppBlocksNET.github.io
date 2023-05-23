@@ -1,3 +1,7 @@
+---
+layout: home 
+title: AppBlocks.NET
+---
 ## Welcome to [AppBlocks.NET](/)
 The easiest way to build and deploy "Applications as a Service".
   
