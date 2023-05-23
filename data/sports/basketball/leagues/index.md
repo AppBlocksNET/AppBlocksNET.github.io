@@ -1,7 +1,7 @@
 ---
 layout: home 
 breadcrumbs: AppBlocks.NET - Sports - Basketball - Leages
-title: National Basketball Association
+title: Leagues
 ---
 # Leagues
 
