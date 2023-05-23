@@ -1,6 +1,8 @@
 ---
 layout: home 
-title: AppBlocks.NET - Sports - Baseball - Major League Baseball - Los Angeles Dodgers - Clayton Kershaw
+breadcrumbs: AppBlocks.NET - Sports - Baseball - Major League Baseball - Los Angeles Dodgers - Clayton Kershaw
+tags: data sports baseball "major league baseball" "los angeles dodgers"
+title: Clayotn Kershaw
 ---
 # Los Angeles Dodgers
 
