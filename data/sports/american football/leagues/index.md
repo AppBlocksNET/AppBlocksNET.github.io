@@ -1,9 +1,8 @@
 ---
 layout: home 
-breadcrumbs: AppBlocks.NET - Sports - Basketball - Leages
+breadcrumbs: AppBlocks.NET - Sports - American Football - Leages
 title: Leagues
 ---
 # Leagues
 
-## National Basketball Association
-positon: Shooting guard
+## National Football League

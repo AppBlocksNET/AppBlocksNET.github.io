@@ -6,4 +6,3 @@ title: National Basketball Association
 # Leagues
 
 ## National Basketball Association
-positon: Shooting guard
