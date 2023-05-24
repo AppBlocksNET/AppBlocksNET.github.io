@@ -1,5 +1,6 @@
 ---
 layout: page
+pagetitle: About
 title: About
 ---
 
