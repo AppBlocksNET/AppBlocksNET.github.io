@@ -5,11 +5,11 @@ title: Sitemap
 menu: main
 ---
 {% for page in site.pages %}
-  <a href="{{ site.url }}{{ page.url | remove: "index.html" }}">{{ page.title }}</a>
+  <a href="{{ site.url }}{{ page.url | remove: "index.html" }}">
     {% if page.date %}
-      {{ page.date | date_to_xmlschema }} updated
+      {{ page.date | date_to_xmlschema }}
     {% else %}
-      {{ site.time | date_to_xmlschema }} updated
+      {{ site.time | date_to_xmlschema }}
     {% endif %}
-  <br/>
+    {{ page.title }}</a><br/>
 {% endfor %}
