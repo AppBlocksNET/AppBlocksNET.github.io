@@ -12,7 +12,7 @@ menu: main
 {% assign sorted_pages = site.pages | sort: 'url' %}
 
 <ul>
-  {% for page in sorted_pages %}
+  {% for page in site.sorted_pages %}
     {% assign url_parts = page.url | split: '/' %}
     {% assign url_parts_size = url_parts | size %}
     {% assign rm = url_parts | last %}
@@ -35,7 +35,7 @@ menu: main
           <ul id="{{ nested_ul_id }}">
       {% endif %}
       
-      {% if forloop.last or page.url | split: '/' | last == 'index.html' %}
+      {% if page.url != '/assets/' %}
         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
       {% endif %}
       
@@ -46,4 +46,5 @@ menu: main
     {% endif %}
   {% endfor %}
 </ul>
+
 

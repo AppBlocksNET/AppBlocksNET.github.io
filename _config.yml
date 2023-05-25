@@ -7,3 +7,7 @@ description: "The best and easiest way to deploy Applications as a Service."
 
 # Build settings
 remote_theme: jekyll/minima
+
+collections:
+  sorted_pages:
+    output: true
