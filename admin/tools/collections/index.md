@@ -1,5 +1,7 @@
 ---
-layout: default
+layout: page
+pagetitle: Collections
+title: Collections
 ---
 
 <h1>{{ page.title }}</h1>
