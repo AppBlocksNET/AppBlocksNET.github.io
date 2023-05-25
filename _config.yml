@@ -11,3 +11,4 @@ remote_theme: jekyll/minima
 collections:
   sorted_pages:
     output: true
+    permalink: /admin/tools/collections/sorted_pages/:path/
