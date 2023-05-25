@@ -1,0 +1,4 @@
+---
+layout: none
+---
+{{ site | jsonify }}

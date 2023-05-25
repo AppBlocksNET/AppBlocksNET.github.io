@@ -1,15 +1,28 @@
 ---
 layout: page
 ---
-{{ site | jsonify }}
+<ul>
+  {% for item in site %}
+    <li>
+      {{ item[0] }}
+      {% if item[1] %}
+        <ul>
+          {% for subitem in item[1] %}
+            <li>{{ subitem[0] }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
 
 <ul>
-  {% assign current_path = page.url | remove: "/" | prepend: site.baseurl %}
-  {% for file in site.pages %}
-    {% assign file_url = file.url | remove: "/" | prepend: site.baseurl %}
-    {% if file_url contains current_path %}
-      {% assign remaining_path = file_url | remove: current_path | remove: '/' %}
-      {% assign path_segments = remaining_path | split: '/' %}
+  {% assign current_site = site | jsonify %}
+  {% for node in current_site %}
+    <li><a href="{{ node.path }}">{{ node.name }}</a>
+      {% if node.children > 1 %} 
+
+       </li>
       {% if path_segments.size > 1 %}
         {% assign folder = path_segments[1] %}
         {% if folder != '_site' and folder != '' %}
