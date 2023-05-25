@@ -7,18 +7,18 @@ title: Collections
 <h1>{{ page.title }}</h1>
 
 <ul>
+  {% assign current_path = page.url | remove: "/" %}
   {% for file in site.static_files %}
-    {% assign file_url = file.path | relative_url %}
-    {% if file_url contains page.url %}
-      {% assign file_path = file_url | remove: page.url %}
-      {% assign file_segments = file_path | split: '/' %}
-      {% if file_segments.size > 1 %}
-        {% assign folder = file_segments[1] %}
+    {% assign file_path = file.path | remove: "/" %}
+    {% if file_path contains current_path %}
+      {% assign remaining_path = file_path | remove: current_path %}
+      {% if remaining_path != file_path %}
+        {% assign folder = remaining_path | split: "/" | first %}
         {% if folder != '_site' and folder != '' %}
           <li>{{ folder }}</li>
         {% endif %}
       {% else %}
-        {% assign file_name = file_path | split: '/' | last %}
+        {% assign file_name = file_path | split: "/" | last %}
         <li>{{ file_name }}</li>
       {% endif %}
     {% endif %}
