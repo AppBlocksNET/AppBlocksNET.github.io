@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Collections
+pagetitle: Tools
+title: Tools
 ---
 <ul>
   {% assign current_path = page.url | remove: "/" %}
@@ -18,18 +19,5 @@ title: Collections
         <li><a href="{{ remaining_path }}">{{ file_name }}</a></li>
       {% endif %}
     {% endif %}
-  {% endfor %}
-</ul>
-
-<ul>
-  {% for collection in site.collections %}
-    {% assign collection_name = collection.label %}
-    {% for item in site[collection_name] %}
-      <li>
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.description }}</p>
-        <p>{{ item.content }}</p>
-      </li>
-    {% endfor %}
   {% endfor %}
 </ul>
