@@ -9,6 +9,8 @@ menu: main
 {% endfor %} -->
 {% assign sorted_pages = site.pages | sort: 'url' %}
 
+{% assign sorted_pages = site.pages | sort: 'url' %}
+
 <ul>
   {% for page in sorted_pages %}
     {% assign url_parts = page.url | split: '/' %}
@@ -41,13 +43,7 @@ menu: main
           </ul>
         </li>
       {% endif %}
-      
-      <script>
-        var nestedUl = document.getElementById("{{ nested_ul_id }}");
-        if (nestedUl.children.length === 0) {
-          nestedUl.remove();
-        }
-      </script>
     {% endif %}
   {% endfor %}
 </ul>
+
