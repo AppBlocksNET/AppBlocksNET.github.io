@@ -1,6 +1,6 @@
 ---
 layout: home 
-breadcrumbs: AppBlocks.NET - Sports - American Football - Leages
+breadcrumbs: AppBlocks.NET - Sports - American Football - Leagues
 title: Leagues
 ---
 # Leagues
