@@ -5,8 +5,6 @@ pagetitle: Sports
 title: Sports
 menu: main
 ---
-# Sports
-
 <ul>
   {% assign current_path = page.url | remove: "/" %}
   {% for file in site.static_files %}
@@ -16,11 +14,11 @@ menu: main
       {% if remaining_path != file_path %}
         {% assign folder = remaining_path | split: "/" | first %}
         {% if folder != '_site' and folder != '' %}
-          <li>{{ folder }}</li>
+          <li><a href="{{ remaining_path }}">{{ folder }}</a></li>
         {% endif %}
       {% else %}
         {% assign file_name = file_path | split: "/" | last %}
-        <li>{{ file_name }}</li>
+        <li><a href="{{ remaining_path }}">{{ file_name }}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
