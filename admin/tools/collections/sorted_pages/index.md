@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 ---
 {% assign sorted_pages = site.pages | sort: 'url' | where_exp: 'page', 'page.url != "/assets/"' %}
 {% for page in sorted_pages %}
