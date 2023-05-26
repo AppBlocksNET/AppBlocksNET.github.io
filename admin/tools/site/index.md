@@ -11,24 +11,22 @@ layout: page
           <ul>
             {% for subkey in value %}
               <li>
-                {% if subkey == "html_pages" %}
-                  <strong>{{ subkey }}</strong>
-                  <ul>
-                    {% for page in site.html_pages %}
-                      <li>
-                        <strong>Page:</strong>
-                        <ul>
-                          {% for pageKey in page %}
-                            <li>
-                              <strong>{{ pageKey }}</strong>: {{ page[pageKey] | jsonify }}
-                            </li>
-                          {% endfor %}
-                        </ul>
-                      </li>
-                    {% endfor %}
-                  </ul>
+                <strong>{{ subkey }}</strong>
+                {% assign subvalue = value[subkey] %}
+                {% if subvalue != null %}
+                  {% if subvalue.size > 0 %}
+                    <ul>
+                      {% for subsubkey in subvalue %}
+                        <li>
+                          <strong>{{ subsubkey }}</strong>: {{ subvalue[subsubkey] }}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    <em>No data</em>
+                  {% endif %}
                 {% else %}
-                  <strong>{{ subkey }}</strong>: {{ subvalue | jsonify }}
+                  <em>No value</em>
                 {% endif %}
               </li>
             {% endfor %}
