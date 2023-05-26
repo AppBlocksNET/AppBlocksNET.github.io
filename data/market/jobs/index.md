@@ -1,7 +1,6 @@
 ---
 layout: home 
 breadcrumbs: AppBlocks.NET - Market - Jobs
-pagetitle: Jobs
 title: Jobs
 menu: main
 ---

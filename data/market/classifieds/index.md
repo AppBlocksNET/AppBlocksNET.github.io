@@ -1,7 +1,6 @@
 ---
 layout: home 
 breadcrumbs: AppBlocks.NET - Market - Classifieds
-pagetitle: Classifieds
 title: Classifieds
 menu: main
 ---

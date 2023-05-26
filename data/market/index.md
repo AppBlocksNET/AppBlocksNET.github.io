@@ -5,6 +5,12 @@ title: Market
 menu: main
 ---
 <ul>
+  <li>[Classifieds](classifieds)</li>
+  <li>[Jobs](jobs)</li>
+  <li>[Request For...](request-for)
+    <li>[Bid](request-for/bid)</li>
+    <li>[Proposal](request-for/proposal)</li>
+  </li>
   {% assign current_path = page.url | remove: "/" | prepend: site.baseurl %}
   {% for file in site.static_files %}
     {% assign file_path = file.path | remove: "/" | prepend: site.baseurl %}

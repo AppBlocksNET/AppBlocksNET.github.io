@@ -1,7 +1,6 @@
 ---
 layout: home 
 breadcrumbs: AppBlocks.NET - Market - Request For Bid
-pagetitle: Request For Bid
 title: Request For Bid
 menu: main
 ---
