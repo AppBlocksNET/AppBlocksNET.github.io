@@ -11,22 +11,24 @@ layout: page
           <ul>
             {% for subkey in value %}
               <li>
-                <strong>{{ subkey }}</strong>
-                {% assign subvalue = value[subkey] %}
-                {% if subvalue != null %}
-                  {% if subvalue.size > 0 %}
-                    <ul>
-                      {% for subsubkey in subvalue %}
-                        <li>
-                          <strong>{{ subsubkey }}</strong>: {{ subvalue[subsubkey] }}
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% else %}
-                    <em>No data</em>
-                  {% endif %}
+                {% if subkey == "html_pages" %}
+                  <strong>{{ subkey }}</strong>
+                  <ul>
+                    {% for subsubkey in subvalue %}
+                      <li>
+                        <strong>Page {{ forloop.index }}:</strong>
+                        <ul>
+                          {% for page_key in subsubkey %}
+                            <li>
+                              <strong>{{ page_key }}</strong>: {{ subsubkey[page_key] }}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </li>
+                    {% endfor %}
+                  </ul>
                 {% else %}
-                  <em>No value</em>
+                  <strong>{{ subkey }}</strong>: {{ subvalue }}
                 {% endif %}
               </li>
             {% endfor %}
