@@ -14,15 +14,13 @@ layout: page
                 {% if subkey == "html_pages" %}
                   <strong>{{ subkey }}</strong>
                   <ul>
-                    {% assign pages = site.html_pages %}
-                    {% for page in pages %}
-                      {% assign pageData = page | jsonify %}
+                    {% for page in site.html_pages %}
                       <li>
-                        <strong>Page {{ forloop.index }}:</strong>
+                        <strong>Page:</strong>
                         <ul>
-                          {% for pageKey in pageData %}
+                          {% for pageKey in page %}
                             <li>
-                              <strong>{{ pageKey }}</strong>: {{ pageData[pageKey] }}
+                              <strong>{{ pageKey }}</strong>: {{ page[pageKey] }}
                             </li>
                           {% endfor %}
                         </ul>
