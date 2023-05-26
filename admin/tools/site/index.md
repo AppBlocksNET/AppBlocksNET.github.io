@@ -20,7 +20,7 @@ layout: page
                         <ul>
                           {% for pageKey in page %}
                             <li>
-                              <strong>{{ pageKey }}</strong>: {{ page[pageKey] }}
+                              <strong>{{ pageKey }}</strong>: {{ page[pageKey] | jsonify }}
                             </li>
                           {% endfor %}
                         </ul>
@@ -28,7 +28,7 @@ layout: page
                     {% endfor %}
                   </ul>
                 {% else %}
-                  <strong>{{ subkey }}</strong>: {{ subvalue }}
+                  <strong>{{ subkey }}</strong>: {{ subvalue | jsonify }}
                 {% endif %}
               </li>
             {% endfor %}
