@@ -4,24 +4,28 @@ layout: page
 <ul>
   {% for key in site %}
     <li>
-      {{ key }}
+      <strong>{{ key }}</strong>
       {% assign value = site[key] %}
       {% if value != null and value != empty %}
         <ul>
           {% for subkey in value %}
             <li>
-              {{ subkey }}
+              <strong>{{ subkey }}</strong>
               {% assign subvalue = value[subkey] %}
               {% if subvalue != null and subvalue != empty %}
                 <ul>
                   {% for subsubkey in subvalue %}
-                    <li>{{ subsubkey }}</li>
+                    <li>
+                      <strong>{{ subsubkey }}</strong>: {{ subvalue[subsubkey] }}
+                    </li>
                   {% endfor %}
                 </ul>
               {% endif %}
             </li>
           {% endfor %}
         </ul>
+      {% else %}
+        <em>No data</em>
       {% endif %}
     </li>
   {% endfor %}
