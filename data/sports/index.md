@@ -1,11 +1,14 @@
 ---
 layout: home 
-breadcrumbs: AppBlocks.NET - Sports - Basketball - Leagues
+breadcrumbs: AppBlocks.NET - Sports
 pagetitle: Sports
 title: Sports
 menu: main
 ---
 <ul>
+  <li>[American Football](american-football)</li>
+  <li>[Baseball](baseball)</li>
+  <li>[Basketball](basketball)</li>
   {% assign current_path = page.url | remove: "/" | prepend: site.baseurl %}
   {% for file in site.static_files %}
     {% assign file_path = file.path | remove: "/" | prepend: site.baseurl %}
