@@ -1,11 +1,14 @@
-{% assign current_url = page.url | remove: "index.html" %}
 <ul>
-  {% for child in site.pages %}
-    {% if child.url contains current_url and child.url != current_url %}
-      <li>
-        <a href="{{ child.url }}">{{ child.title }}</a>
-        {% include tree.html %}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+    {% assign sorted_pages = site.html_pages | sort: 'url' %}
+    {% for page in sorted_pages %}
+      {% assign page_path = page.url | remove: '/index.html' | split: '/' %}
+      {% assign depth = page_path | size %}
+      {% if depth == 1 %}
+        <li>
+          <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+          {% assign parent_url = page.url %}
+          {% include tree.html %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>  
