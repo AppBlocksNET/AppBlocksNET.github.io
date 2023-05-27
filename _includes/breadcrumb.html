@@ -1,0 +1,11 @@
+{% assign current_url = page.url | remove: '/index.html' %}
+{% assign url_parts = current_url | split: '/' %}
+{% assign breadcrumb_urls = '' | split: ',' %}
+
+{% for part in url_parts %}
+  {% assign breadcrumb_urls = breadcrumb_urls | push: part %}
+  {% assign breadcrumb_url = breadcrumb_urls | join: '/' %}
+  <li>
+    <a href="{{ breadcrumb_url | absolute_url }}">{{ part }}</a>
+  </li>
+{% endfor %}

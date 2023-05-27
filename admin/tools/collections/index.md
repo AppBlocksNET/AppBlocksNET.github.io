@@ -2,6 +2,7 @@
 layout: page
 title: Collections
 ---
+{% include breadcrumb.html %}
 <ul>
   {% for collection in site.collections %}
     {% assign collection_name = collection.label %}

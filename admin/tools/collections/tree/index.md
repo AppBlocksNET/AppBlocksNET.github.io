@@ -1,6 +1,7 @@
 ---
 layout: page
 ---
+{% include breadcrumb.html %}
 <ul>
   {% assign current_path = page.url | remove: "/" | prepend: site.baseurl %}
   {% for file in site.pages %}

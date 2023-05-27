@@ -1,6 +1,7 @@
 ---
 layout: page
 ---
+{% include breadcrumb.html %}
 <ul>
   {% for key in site %}
     <li>
