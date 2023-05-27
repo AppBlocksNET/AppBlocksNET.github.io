@@ -5,6 +5,8 @@ pagetitle: Sports
 title: Sports
 menu: main
 ---
+{% include tree.html %}
+
 - [American Football](american-football)
 - [Baseball](baseball)
 - [Basketball](basketball)

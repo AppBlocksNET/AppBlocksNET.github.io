@@ -1,5 +1,4 @@
 ---
 layout: null
 ---
-
 {{ site.pages | sort: 'url' | where_exp: 'page', 'page.url != "/assets/"' | jsonify }}

@@ -1,16 +1,15 @@
 # Site settings
-title: AppBlocks.NET
 author:
   name: Radical Dave
   email: dave@appblocks.net
 description: "The best and easiest way to deploy Applications as a Service."
+exclude: [node_modules]
+title: AppBlocks.NET
 
 # Build settings
 remote_theme: jekyll/minima
 
-collections:
-  sorted_pages:
-    output: true
-    permalink: /admin/tools/collections/sorted_pages/:path/
-
-exclude: [node_modules]
+# collections:
+#   sorted_pages:
+#     output: true
+#     permalink: /admin/tools/collections/sorted_pages/:path/
