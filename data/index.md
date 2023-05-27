@@ -5,9 +5,9 @@ title: Data
 pagetitle: Data
 menu: main
 ---
+- [Classifieds](classifieds)
+- [Sports](sports)
 <ul>
-  <!-- <li>[Classifieds](classifieds)</li>
-  <li>[Sports](sports)</li> -->
   {% assign current_path = page.url | remove: "/" | prepend: site.baseurl %}
   {% for file in site.static_files %}
     {% assign file_path = file.path | remove: "/" | prepend: site.baseurl %}
