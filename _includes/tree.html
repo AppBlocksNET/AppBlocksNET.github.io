@@ -1,24 +1,11 @@
 {% assign current_url = include.current_url %}
-{% assign current_depth = current_url | remove: '/index.html' | split: '/' | size %}
 {% assign current_page = site.html_pages | where: 'url', current_url | first %}
-
 <ul>
   <li>
     <a href="{{ current_page.url | absolute_url }}">{{ current_page.title }}</a>
-    {% assign child_pages = site.html_pages | where_exp: 'item', 'item.url contains current_url and item.url != current_url' %}
-    {% if child_pages.size > 0 %}
-      <ul>
-        {% for child in child_pages %}
-          {% assign child_url_parts = child.url | remove: '/index.html' | split: '/' %}
-          {% assign child_depth = child_url_parts | size %}
-          {% if child_depth == current_depth + 1 %}
-            <li>
-              <a href="{{ child.url | absolute_url }}">{{ child.title }}</a>
-              {% include tree.html current_url=child.url %}
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+    {% assign subtree = site.html_pages | where_exp: 'item', 'item.url contains current_url and item.url != current_url' %}
+    {% if subtree.size > 0 %}
+      {% include tree.html current_url=current_url subtree=subtree %}
     {% endif %}
   </li>
 </ul>
