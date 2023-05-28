@@ -5,8 +5,5 @@
   <li>
     <a href="{{ current_page.url | absolute_url }}">{{ current_page.title }}</a>
     {% assign subtree = site.html_pages | where_exp: 'item', 'item.url contains current_url and item.url != current_url' %}
-    <!-- {% if subtree.size > 0 %}
-      {% include tree.html current_url=current_url subtree=subtree %}
-    {% endif %} -->
   </li>
 </ul>
