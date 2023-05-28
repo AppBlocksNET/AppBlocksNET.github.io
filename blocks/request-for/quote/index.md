@@ -6,4 +6,4 @@ title: Request For Quote
 menu: main
 ---
 {% include breadcrumb.html %}
-{% page.description %}
+{{ page.description }}
