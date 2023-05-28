@@ -5,18 +5,7 @@
     {% for crumb in crumbs offset: 1 %}
         /
         {% if forloop.last %}
-          {{ page.title }}
-          <ul>
-            {% assign pages = site.pages | sort: 'title' %}
-            {%- for item in pages %}
-            {%- if item.dir == page.dir and item.path != page.path %}
-              <li>
-                <a href="{{ item.url | relative_url }}">
-                  {% include logo.html name=item.logo %}
-                  <span>{{ item.title }}</span>
-                </a>
-              </li>
-          </ul>
+            {{ page.title }}
         {% else %}
             {% assign crumb_limit = forloop.index | plus: 1 %}
             <a href="{{ site.baseurl }}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
