@@ -1,7 +1,4 @@
 {% assign current_url = page.url | remove: '/index.html' %}
-{% if current_url == "sitemap" %}
-   {% assign current_url = "" %}
-{% endif %}
 {% assign current_depth = current_url | split: '/' | size %}
 
 {% if current_depth == 1 %}
