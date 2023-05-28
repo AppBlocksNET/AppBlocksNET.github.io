@@ -1,0 +1,32 @@
+{% capture current_url %}{{ page.url | remove: 'index.html' }}{% endcapture %}
+{% capture current_path %}{{ current_url | remove: '/' | split: '/' }}{% endcapture %}
+{% assign path_parts = current_path | split: '/' %}
+
+<ul class="page-tree">
+  {% for path in path_parts %}
+    {% if forloop.index != path_parts.size %}
+      {% assign parent_path = path_parts | slice: 0, forloop.index | join: '/' %}
+      {% assign parent_url = '/' | append: parent_path | append: '/' %}
+      {% assign parent_page = site.pages | where: "url", parent_url | first %}
+      <li>
+        <a href="{{ parent_page.url }}">{{ parent_page.title }}</a>
+        <ul>
+    {% endif %}
+  {% endfor %}
+
+  {% for page in site.pages %}
+    {% capture page_url %}{{ page.url | remove: 'index.html' }}{% endcapture %}
+    {% capture page_path %}{{ page_url | remove: '/' | split: '/' }}{% endcapture %}
+    {% assign page_parts = page_path | split: '/' %}
+
+    {% if page_parts[0] == current_path %}
+      <li>
+        <a href="{{ page.url }}">{{ page.title }}</a>
+      </li>
+    {% elsif page_parts[0] == parent_path %}
+      </ul>
+      </li>
+    {% endif %}
+  {% endfor %}
+
+</ul>

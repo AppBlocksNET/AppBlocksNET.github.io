@@ -1,15 +1,17 @@
-{% assign url_parts = page.url | remove: '/index.html' | split: '/' %}
-<ul class="breadcrumb">
-  {% for part in url_parts %}
-    {% assign url_segment = url_parts | slice: 0, forloop.index | join: '/' %}
-    {% assign breadcrumb_page = site.html_pages | where: 'url', url_segment | first %}
-    {% if breadcrumb_page %}
-      <li>
-        <a href="{{ breadcrumb_page.url | absolute_url }}">{{ breadcrumb_page.title }}</a>
-        {% if forloop.last == false %}
-          <span>/</span>
+{% assign crumbs = page.url | remove: '/index.html' | split: '/' %}
+{% if crumbs %}
+  <div id="breadcrumbs">
+    <a href="{{ '/' | relative_url }}">Home</a>
+    {% for crumb in crumbs offset: 1 %}
+        /
+        {% if forloop.last %}
+            {{ page.title }}
+        {% else %}
+            {% assign crumb_limit = forloop.index | plus: 1 %}
+            <a href="{{ site.baseurl }}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
+                {{- crumb | replace: '-', ' ' | remove: '.html' | capitalize -}}
+            </a>
         {% endif %}
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+    {% endfor %}
+  </div>
+{% endif %}
