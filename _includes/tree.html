@@ -5,7 +5,7 @@
   <ul>
     <li>
       <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
-      {% include item-tree.html %}
+      {% include item-tree.html current_url=current_url %}
     </li>
   </ul>
 {% else %}
@@ -19,7 +19,7 @@
           {% capture child_url_parts %}{{ child.url | remove: '/index.html' | split: '/' }}{% endcapture %}
           {% assign child_depth = child_url_parts | size %}
           {% if child_depth > current_depth %}
-            {% include item-tree.html %}
+            {% include item-tree.html current_url=child.url %}
           {% endif %}
         </li>
       {% endfor %}
