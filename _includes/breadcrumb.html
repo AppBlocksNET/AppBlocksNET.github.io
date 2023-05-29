@@ -22,6 +22,7 @@
             {% assign crumb_limit = forloop.index | plus: 1 %}
             <a href="{{ site.baseurl }}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
                 {{- crumb | replace: '-', ' ' | remove: '.html' | capitalize -}}
+                {% include item-list.html current_url={{ site.baseurl }}{{crumb}} %}
             </a>
         {% endif %}
     {% endfor %}

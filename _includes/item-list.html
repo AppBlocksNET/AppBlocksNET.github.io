@@ -1,0 +1,10 @@
+{% assign current_url = page.url | remove: "index.html" %}
+<ul{% if include.classname %} class="{{ include.classname }}"{% endif %}>
+  {% for child in site.pages %}
+    {% if child.url contains current_url and child.url != current_url %}
+      <li>
+        <a href="{{ child.url }}">{{ child.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
