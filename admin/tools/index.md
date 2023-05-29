@@ -4,6 +4,8 @@ pagetitle: Tools
 title: Tools
 ---
 {% include breadcrumb.html %}
+{% include item-tree.html %}
+
 - [Collections](collections)
   - [Sorted_Pages](collections/sorted_pages)
   - [Tree](collections/tree)
