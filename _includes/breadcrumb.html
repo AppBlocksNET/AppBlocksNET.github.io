@@ -12,7 +12,6 @@
             {%- if item.dir == page.dir and item.path != page.path %}
               <li>
                 <a href="{{ item.url | relative_url }}">
-                  {% include logo.html name=item.logo %}
                   <span>{{ item.title }}</span>
                 </a>
               </li>
