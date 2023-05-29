@@ -7,7 +7,7 @@
         <li>
           <a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
           {% assign parent_url = page.url %}
-          {% include tree.html %}
+          {% include item-tree.html %}
         </li>
       {% endif %}
     {% endfor %}
