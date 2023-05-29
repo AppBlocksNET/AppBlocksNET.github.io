@@ -1,8 +1,0 @@
-{% assign current_url = include.current_url %}
-{% assign current_page = site.html_pages | where: 'url', current_url | first %}
-
-<ul>
-  <li>
-    <a href="{{ current_page.url | absolute_url }}">{{ current_page.title }}</a>
-  </li>
-</ul>
