@@ -4,7 +4,7 @@
     {% if child.url contains current_url and child.url != current_url %}
       <li>
         <a href="{{ child.url }}">{{ child.title }}</a>
-        {% include item-tree.html classname="dropdown"  %}
+        {% include item-tree.html page=child.url classname="dropdown"  %}
       </li>
     {% endif %}
   {% endfor %}
