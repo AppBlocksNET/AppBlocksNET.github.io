@@ -6,15 +6,15 @@
         /
         {% if forloop.last %}
           {{ page.title }}
-          <ul>
+          <ul class="dropdown">
             {% assign pages = site.pages | sort: 'title' %}
             {%- for item in pages %}
             {%- if item.dir == page.dir and item.path != page.path %}
-              <li>
-                <a href="{{ item.url | relative_url }}">
-                  <span>{{ item.title }}</span>
-                </a>
-              </li>
+            <li>
+              <a href="{{ item.url | relative_url }}">
+                <span>{{ item.title }}</span>
+              </a>
+            </li>
             {% endif %}
             {% endfor %}
           </ul>

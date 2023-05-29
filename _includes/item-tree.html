@@ -1,8 +1,11 @@
-{% assign current_url = include.current_url %}
-{% assign current_page = site.html_pages | where: 'url', current_url | first %}
-
-<ul>
-  <li>
-    <a href="{{ current_page.url | absolute_url }}">{{ current_page.title }}</a>
-  </li>
+{% assign current_url = page.url | remove: "index.html" %}
+<ul{% if include.classname %} class="{{ include.classname }}"{% endif %}>
+  {% for child in site.pages %}
+    {% if child.url contains current_url and child.url != current_url %}
+      <li>
+        <a href="{{ child.url }}">{{ child.title }}</a>
+        {% include tree.html classname="dropdown"  %}
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>
