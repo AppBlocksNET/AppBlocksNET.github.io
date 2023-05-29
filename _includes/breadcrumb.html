@@ -16,6 +16,8 @@
                   <span>{{ item.title }}</span>
                 </a>
               </li>
+            {% endif %}
+            {% endfor %}
           </ul>
         {% else %}
             {% assign crumb_limit = forloop.index | plus: 1 %}
