@@ -1,5 +1,8 @@
 ---
 layout: debug
+breadcrumbs: AppBlocks.NET - Admin - Tools - Debug
+title: Debug
+menu: admin
 ---
 {% include breadcrumb.html %}
 <ul>

@@ -1,5 +1,8 @@
 ---
 layout: page
+breadcrumbs: AppBlocks.NET - Admin = Tools - Tree
+title: Tree
+menu: admin
 ---
 {% include breadcrumb.html %}
 <ul>
